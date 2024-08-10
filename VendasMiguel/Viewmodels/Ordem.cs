@@ -21,11 +21,36 @@ public class Ordem : INotifyPropertyChanged
         }
     }
 
-
-
     public void NovaVenda()
     {
-
+        Venda = new()
+        {
+            Id = Guid.NewGuid(),
+            Itens =
+            [
+                new Models.OrdemItem()
+                {
+                    Produto = new()
+                    {
+                        Id = 1,
+                        Nome = "Hamburger",
+                        Preco = 14.9M
+                    },
+                    Quantidade = 0.0M
+                },
+                new Models.OrdemItem()
+                {
+                    Produto = new()
+                    {
+                        Id = 2,
+                        Nome = "Refrigerante",
+                        Preco = 14.9M
+                    },
+                    Quantidade = 0.0M
+                }
+            ],
+            Total = 0.00M
+        };
     }
 
 
